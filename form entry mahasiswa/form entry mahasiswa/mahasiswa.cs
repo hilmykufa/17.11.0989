@@ -14,5 +14,6 @@ namespace form_entry_mahasiswa
         public string Alamat { get; set; }
         public string Date { get; set; }
         public string Gender { get; set; }
+        public string Born { get; set; }
     }
 }
