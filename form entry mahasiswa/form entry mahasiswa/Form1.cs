@@ -109,6 +109,18 @@ namespace form_entry_mahasiswa
         private void btnTambah_Click(object sender, EventArgs e)
         {
 
+            if (!txtNim.MaskFull)
+            {
+                MessageBox.Show("Nim Harus diisi", "Konfirmasi", MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
+                return;
+            }
+            if (!(txtName.Text.Length > 0))
+            {
+                MessageBox.Show("Nama Harus diisi", "Konfirmasi", MessageBoxButtons.OK,
+                MessageBoxIcon.Exclamation);
+                return;
+            }
             if (isNewData)
                 mhs = new Mahasiswa();
 
@@ -116,6 +128,7 @@ namespace form_entry_mahasiswa
             mhs.Name = txtName.Text;
             mhs.Gender = rdoLakilaki.Checked ? "Laki-laki" : "Perempuan";
             mhs.Alamat = txtAlamat.Text;
+            mhs.Born = txtBorn.Text;
             mhs.Date = dtpDate.Value.ToString("dd/MM/yyyy");
             if (isNewData) // data baru
             {
